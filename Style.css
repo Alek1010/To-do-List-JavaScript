@@ -1,0 +1,120 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-width: 250px;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+#example{
+    display: none;
+}
+
+ul li {
+    cursor: pointer;
+    list-style: none;
+    position: relative; /* Makes the ::before pseudo-element relative to the li */
+    padding: 10px 10px 10px 40px; /* Add padding to make space for the tick mark on the left */
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+    display: flex; /* Flexbox layout for text and button alignment */
+    justify-content: space-between; /* Pushes text to the left, button to the right */
+    align-items: center; /* Vertically centers text and button */
+    transition: 0.2s;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul li.checked {
+    background: #888 ; 
+    color: #fff;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    content: ''; /* Adds the tick mark */
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 50%; /* Vertically center the tick mark */
+    left: 10px; /* Positions the tick mark inside the padding area */
+    transform: translateY(-50%) rotate(45deg); /* Centers and rotates for a checkmark shape */
+    height: 10px; /* Size of the tick */
+    width: 5px; /* Size of the tick */
+    display: block;
+}
+
+ul li:nth-child(odd){
+    background-color : #f9f9f9;
+    color: #888;
+}
+
+ul li:hover{
+    background: #ddd;
+}
+
+.remove{
+    position: absolute;
+    right: 0;
+    top: 0  ;
+    padding: 10px 16px 13px 16px;
+    border-radius: 0;
+    border: none;
+}
+
+.remove:hover{
+    background-color: #f44336;
+    color: white;
+}
+
+header{
+    background-color: #f44336;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+header::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input{
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+.button{
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    border: none;
+}
+
+.button:hover{
+    background-color: #bbb;
+}
+
+  

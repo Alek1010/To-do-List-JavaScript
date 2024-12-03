@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>To do List</h1>
+            <input class="search" type="text" placeholder="Enter your task">
+            <button class="button">Add</button>
+        </div>
+    </header>
+
+    <ul class="list">
+        <li id="example" class="checked">Pay bills</li>
+    </ul>
+        
+
+    <script>
+        const buttonClick = document.querySelector('.button')
+        const searchInput = document.querySelector('.search')
+        const ul = document.querySelector('ul')
+
+        buttonClick.addEventListener('click',()=>{
+            var li = document.createElement("li")
+            const searchTerm = searchInput.value
+            if(searchTerm){
+                li.appendChild(document.createTextNode(searchTerm));
+                const removeButton = document.createElement("button");
+                removeButton.textContent = "X";
+                removeButton.className="remove";
+
+                removeButton.addEventListener('click',()=>{
+                    li.remove();
+                })
+
+                li.appendChild(removeButton);
+                ul.appendChild(li);
+
+                searchInput.value='';
+            }  
+            
+        });
+
+        ul.addEventListener('click',function(ev){
+            if(ev.target.tagName==='LI'){
+                ev.target.classList.toggle('checked');
+            }
+        })
+    </script>
+</body>
+</html>
