@@ -31,6 +31,8 @@
             if(searchTerm){
                 li.appendChild(document.createTextNode(searchTerm));
                 const removeButton = document.createElement("button");
+                const img =document.createElement("img");
+                img.src="arrow.png"
                 removeButton.textContent = "X";
                 removeButton.className="remove";
 
@@ -39,6 +41,7 @@
                 })
 
                 li.appendChild(removeButton);
+                li.appendChild(img);
                 ul.appendChild(li);
 
                 searchInput.value='';

@@ -117,4 +117,12 @@ input{
     background-color: #bbb;
 }
 
+img{
+    width: 35px;
+    height: 15px;
+    margin-right: 20px;
+    padding-right: 20px ;
+    cursor: pointer;
+}
+
   
